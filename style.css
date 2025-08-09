@@ -1,0 +1,289 @@
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.home {
+  background: url(image/A5.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.blur-backdrop {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  height: 100vh;
+}
+
+.fadein {
+  animation: fadein 1s ease-in;
+}
+
+.scroll {
+  position: relative;
+  animation: down 1.5s infinite;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    border-left: 2px solid #ffff;
+    border-bottom: 2px solid #ffff;
+    transform: rotate(-45deg);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+    border-right: 2px solid #ffff;
+    border-bottom: 2px solid #ffff;
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+.swiper-pagination-bullet {
+  background: #fefeff;
+}
+.swiper-pagination-bullet-active {
+  background: #ecebeb !important;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.799);
+}
+
+.modal-content {
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 50%;
+  max-width: 3000px;
+}
+
+.close {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  /* top: 5px; */
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Memberikan space antara jadwal dan elemen lain */
+.jadwal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Jarak antar baris */
+  align-items: stretch; /* Membuat baris melebar */
+  width: 100%;
+  max-width: 1024px;
+  margin: 40px auto; /* Menambahkan jarak di atas dan bawah container */
+  padding: 20px; /* Menambahkan ruang di dalam container */
+}
+
+/* Baris untuk kotak hari */
+.baris {
+  display: flex;
+  justify-content: space-between; /* Sebar kotak secara merata */
+  gap: 20px; /* Tambahan jarak antar kotak */
+}
+
+/* Kotak untuk setiap hari */
+.kotak-hari {
+  background-color: #ffffff;
+  border: 5px solid #00ccff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1; /* Membuat kotak memiliki ukuran fleksibel */
+  text-align: center;
+  width: 40%; /* Ukuran default untuk layar besar */
+  margin: 0 10px; /* Jarak antar kotak untuk fleksibilitas */
+}
+
+.kotak-pelajaran {
+  background-color: #ffffff;
+  border: 5px solid #f700ff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1; /* Membuat kotak memiliki ukuran fleksibel */
+  text-align: center;
+  width: 40%; /* Ukuran default untuk layar besar */
+  margin: 0 10px; /* Jarak antar kotak untuk fleksibilitas */
+}
+
+/* Gaya untuk teks nama hari */
+.hari {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* Gaya teks untuk nama-nama */
+.nama {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #34495e;
+}
+.flex-container {
+  display: flex;
+  justify-content: center; /* Sejajarkan logo secara horizontal */
+  gap: 15px; /* Tambahkan jarak antar logo */
+  margin-top: 10px; /* Beri sedikit jarak dengan teks "FOLLOW US" */
+}
+
+.logo img {
+  border-radius: 8px; /* Tambahkan sudut melengkung jika diperlukan */
+  cursor: pointer; /* Ubah kursor jadi tangan saat hover */
+  transition: transform 0.2s; /* Animasi saat dihover */
+}
+
+.logo img:hover {
+  transform: scale(1.1); /* Sedikit perbesar gambar saat dihover */
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.web-kelas {
+  display: none;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+@media only screen and (max-width: 576px) {
+  .pic-1 {
+    display: none;
+  }
+  nav ul {
+    position: absolute;
+    top: 0;
+    text-wrap: nowrap;
+  }
+  nav ul:active {
+    opacity: 1;
+  }
+  .home {
+    height: 100vh;
+  }
+  .web-kelas {
+    display: flex;
+  }
+  .mt-12 {
+    margin-top: 5rem !important;
+  }
+  .bottom-16 {
+    bottom: 11rem !important;
+  }
+}
